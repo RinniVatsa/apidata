@@ -1,8 +1,13 @@
 import { useState, useEffect } from 'react';
 import { DataGrid, GridColDef, GridRowsProp } from '@mui/x-data-grid';
-
+import { useNavigate} from 'react-router-dom';
 const SecondPageComponent1 = () => {
   const [data, setData] = useState<GridRowsProp>([]);
+  const navigate = useNavigate();
+
+  const redirectToSecondPage = () => {
+    navigate('/department-list');
+  };
 
   useEffect(() => {
    
@@ -25,8 +30,12 @@ const SecondPageComponent1 = () => {
   ];
 
   return (
-    <div style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={data} columns={columns} />
+    <div>
+      <div style={{ height: 400, width: '100%' }}>
+        <DataGrid rows={data} columns={columns} />
+      </div>
+      <br/>
+      <button onClick={redirectToSecondPage}>Go to  Second Page of the Application[Component 2]</button>
     </div>
   );
 };
