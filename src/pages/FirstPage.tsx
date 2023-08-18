@@ -23,7 +23,7 @@ const FirstPage = () => {
   };
 
   return (
-    <div>
+    <div  style={styles.container} >
       <TextField
         label="Name"
         name="name"
@@ -48,5 +48,16 @@ const FirstPage = () => {
     </div>
   );
 };
+
+
+
+const styles = {
+    container: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh',
+    }
+}
 
 export default FirstPage;
